@@ -12,6 +12,23 @@ This repository contains the new, upgraded version of my personal portfolio, com
 
 This full-stack application now features a more robust and scalable architecture, with data served from a **PostgreSQL** database on Supabase and managed via **Prisma ORM**. The backend logic, including the contact form API, is handled seamlessly by Next.js Route Handlers, all deployed on Vercel.
 
+## 💻 Technology Stack
+
+This project leverages a modern, server-first, and highly performant technology stack.
+
+**Framework & Frontend:**
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
+
+**Backend, Database & Deployment:**
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Resend](https://img.shields.io/badge/Resend-000000?style=for-the-badge&logo=resend&logoColor=white)
+
 ## ⚙️ Core Features & Improvements
 
 This portfolio enhances the features of the original version with a more powerful backend and architecture:
@@ -34,23 +51,6 @@ This portfolio enhances the features of the original version with a more powerfu
 * **Full-Stack Functionality:**
     * **Database Integration:** All portfolio content (skills, projects, education, etc.) is now dynamically fetched from the PostgreSQL database.
     * **Resend API Integration:** The contact form securely saves messages to the database and triggers a real-time email notification via the Resend API.
-
-## 💻 Technology Stack
-
-This project leverages a modern, server-first, and highly performant technology stack.
-
-**Framework & Frontend:**
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
-
-**Backend, Database & Deployment:**
-![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
-![Resend](https://img.shields.io/badge/Resend-000000?style=for-the-badge&logo=resend&logoColor=white)
 
 ## 📸 Screenshots
 
