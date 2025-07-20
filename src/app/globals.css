@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* Animasi untuk tombol 'View CV' */
+    @keyframes bounce-medium {
+        0%, 100% {
+            transform: translateY(-25%);
+            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+        50% {
+            transform: none;
+            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+    }
+
+    /* Animasi untuk panah 'View My Works' */
+    @keyframes shake-vertical {
+        0%, 100% { transform: translateY(0); }
+        20% { transform: translateY(-6px); }
+        40% { transform: translateY(6px); }
+        60% { transform: translateY(-4px); }
+        80% { transform: translateY(4px); }
+    }
+
+    /* Animasi untuk mouse trail */
+@keyframes fade-out-trail {
+        from {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        to {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0) 
+            translate(
+                calc((var(--random-x, 0.5) - 0.5) * 200px), 
+                calc((var(--random-y, 0.5) - 0.5) * 200px)
+            );
+        }
+    }
+}
+
+/* Gaya untuk mouse trail */
+.sparkle {
+    position: fixed;
+    pointer-events: none;
+    background-color: #818cf8; /* indigo-400 */
+    border-radius: 50%;
+    z-index: 9999;
+    box-shadow: 0 0 8px #a5b4fc, 0 0 12px #818cf8, 0 0 16px #818cf8; /* Pijar indigo */
+    animation: fade-out-trail 1s forwards;
+}
