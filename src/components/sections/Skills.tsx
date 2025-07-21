@@ -34,7 +34,7 @@ const SkillsSection = ({ skills }: { skills: Skill[] }) => {
                         key={group.key}
                         onClick={() => setActiveFilter(group.key)}
                         className={`
-                            px-4 py-2 text-sm font-medium rounded-full transition-all duration-300
+                            px-4 py-2 text-xs lg:text-sm font-medium rounded-full transition-all duration-300
                             ${activeFilter === group.key 
                                 ? 'bg-indigo-600 text-white shadow-lg' 
                                 : 'bg-slate-700/50 text-slate-300 hover:bg-slate-700'

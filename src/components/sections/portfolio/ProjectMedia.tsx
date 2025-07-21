@@ -22,9 +22,8 @@ const ProjectMedia = ({ image, videoUrl, isHovering }: ProjectMediaProps) => {
     useEffect(() => {
         if (videoId && videoRef.current) {
             if (isHovering) {
-                videoRef.current.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0`;
+                videoRef.current.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&loop=1&playlist=${videoId}&controls=1&showinfo=0&rel=0`;
             } else {
-                // Hentikan video saat tidak di-hover untuk menghemat resource
                 videoRef.current.src = '';
             }
         }
