@@ -62,6 +62,24 @@ model Message {
     createdAt DateTime @default(now())
 }
 
+model DevlogPost {
+    id           BigInt         @id @default(autoincrement())
+    slug         String         @unique
+    title        String
+    category     DevlogCategory
+    thumbnailUrl String
+    excerpt      String
+    publishedAt  DateTime       @default(now()) @db.Timestamptz(3)
+    createdAt    DateTime       @default(now()) @db.Timestamptz(3)
+    updatedAt    DateTime       @updatedAt @db.Timestamptz(3)
+}
+
+enum DevlogCategory {
+    FRONTEND
+    BACKEND
+    GAME_DEV
+}
+
 enum Category {
     FULLSTACK
     GAME

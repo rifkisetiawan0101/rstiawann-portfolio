@@ -5,15 +5,14 @@ import ProjectList from '@/components/sections/portfolio/ProjectList'; // Kompon
 
 // Halaman ini adalah Server Component
 export default async function PortfolioPage() {
-    // Ambil semua data proyek dari database
     const projects = await prisma.project.findMany({
         orderBy: {
-            id: 'asc', // Urutkan berdasarkan ID agar konsisten
+            id: 'asc',
         },
     });
 
     return (
-        <main className="container mx-auto px-4 py-20 pt-32">
+        <main className="container mx-auto px-4 py-20">
             <SectionTitle 
                 title="My Portfolio" 
                 subtitle="An exhibition of my passion and expertise." 

@@ -1,0 +1,44 @@
+---
+title: 'Dari React ke Next.js: Studi Kasus Migrasi Portofolio Saya'
+publishedAt: '2025-07-22T10:00:00Z'
+category: 'FRONTEND'
+thumbnailUrl: '/assets/thumbnail/thumbnail-migrasi-react-ke-nextjs.png'
+---
+
+Sebagai developer, ada momen pas kita mau _update framework_ atau _library_ dari proyek. Perasaan campur aduk pasti muncul: ada rasa *excited* karena bakal ada fitur baru yang bikin ngiler, tapi nggak bisa dipungkiri, ada juga deg-degannya. "_Duh, apa aja nih yang berubah? Kode lama yang udah susah payah dibangun bakal pecah nggak ya?_" Pertanyaan-pertanyaan itu sering banget melintas di pikiran.
+
+Pengalaman ini mungkin bukan cuma kita aja yang ngerasain. Hampir semua developer pernah mengalami sensasi kayak gini. Rasanya kayak mau nyobain mobil balap baru, tapi belum tahu pedal gasnya sesensitif apa.
+
+Nah, perasaan inilah yang mungkin lagi dirasakan para developer React saat mendengar kabar **React 19** dan integrasinya dengan **Next.js 15**. Tapi tenang, kali ini ceritanya justru lebih seru dan menjanjikan!
+
+### 🧠 Alasan Utama Migrasi: Mengejar Performa dan SEO
+
+Setelah beberapa lama, saya merasa portofolio lama yang dibangun dengan **Create React App (CRA)** punya beberapa keterbatasan. Sebagai _Single Page Application_ (SPA), konten utama dirender di sisi klien. Artinya, Google harus menjalankan JavaScript dulu buat bisa "melihat" isi website kita. Proses ini bisa lebih lambat dan kurang bisa diandalkan.
+
+Next.js dengan App Router-nya menawarkan solusi elegan: **Server-Side Rendering (SSR)**.
+
+```jsx
+// Contoh Server Component di Next.js
+async function Page() {
+  // Data diambil di server, sebelum halaman dikirim ke browser
+  const data = await getDataFromDatabase();
+
+  return <div>{data.content}</div>;
+}
+```
+
+Ini berarti HTML yang dikirim ke browser sudah berisi konten penuh, membuatnya super cepat dimuat dan jadi "sahabat karib" mesin pencari.
+
+### 🖼️ Proses dan Tantangan
+
+Migrasi ini bukan cuma ganti `package.json`, tapi melibatkan beberapa langkah kunci:
+
+1.  **Struktur Ulang Proyek:** Mengadopsi arsitektur App Router (`/app`, `layout.tsx`, `page.tsx`).
+2.  **Migrasi Database:** Pindah dari MongoDB ke **PostgreSQL** di Supabase, plus pakai **Prisma ORM** biar *query* ke database jadi lebih aman dan terstruktur.
+3.  **Transformasi Komponen:** Mengubah semua komponen ke TypeScript dan memisahkan mana yang jadi *Server Component* (buat ambil data) dan *Client Component* (buat interaktivitas).
+
+Tantangan terbesar adalah mengubah pola pikir dari "semuanya di sisi klien" menjadi pendekatan "utamakan server" ala Next.js. Tapi, hasilnya sangat sepadan.
+
+### ✨ Hasil Akhir
+
+Dengan migrasi ini, portofolio saya sekarang bukan cuma lebih cepat dan SEO-friendly, tapi juga punya fondasi kode yang lebih bersih dan siap dikembangkan lebih lanjut—seperti fitur Devlog yang lagi kamu baca ini!
