@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ParticleBackground from "@/lib/ParticleBackground";
-import MouseTrail from "@/lib/MouseTrail";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import EffectsWrapper from "@/lib/EffectsWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -94,8 +93,7 @@ export default function RootLayout({
                 />
             </head>
             <body className={`${inter.className} bg-slate-900 text-white`}>
-                <ParticleBackground />
-                <MouseTrail />
+                <EffectsWrapper />
                 <Header />
                 <div className="relative z-10">
                     {children}
