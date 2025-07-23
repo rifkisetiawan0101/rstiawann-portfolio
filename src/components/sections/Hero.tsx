@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Copy, Linkedin, Github, Instagram, Gamepad2, ArrowDownCircle } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import TypingText from '@/lib/TypingText';
 import { personalInfo } from '@/lib/data';
 import PdfPreviewModal from '@/components/ui/PdfPreviewModal';
