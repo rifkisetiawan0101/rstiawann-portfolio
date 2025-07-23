@@ -21,23 +21,63 @@ async function getCategories() {
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const post = await getDevlogPost(params.slug);
-    
+    const siteUrl = "https://rstiawann.vercel.app";
+    const postUrl = `${siteUrl}/devlog/${post.slug}`;
+
+    // Generate keywords dari judul, kategori, dan beberapa keyword default
+    const keywords = [
+        ...post.title.split(' '),
+        post.category.replace('_', ' '),
+        "Rifki Setiawan",
+        "Devlog",
+        "Portfolio",
+        "Web Development",
+        "Game Development"
+    ];
+
     return {
         title: `${post.title} | Rifki Setiawan's Devlog`,
-        description: `A devlog post by Rifki Setiawan about ${post.title}.`,
+        description: post.excerpt,
+        keywords: keywords,
+        authors: [{ name: "Rifki Setiawan", url: siteUrl }],
+        creator: "Rifki Setiawan",
+
+        alternates: {
+            canonical: postUrl, // URL Kanonikal untuk menghindari konten duplikat
+        },
+        
+        // Metadata Open Graph yang lebih kaya untuk artikel
         openGraph: {
             title: post.title,
-            description: `A devlog post by Rifki Setiawan.`,
+            description: post.excerpt,
+            url: postUrl,
+            siteName: "Rifki Setiawan's Portfolio",
+            images: [
+                {
+                    url: post.thumbnailUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: `Thumbnail for ${post.title}`,
+                },
+            ],
+            locale: 'en_US',
             type: 'article',
             publishedTime: post.publishedAt.toISOString(),
-            url: `https://rstiawann.vercel.app/devlog/${post.slug}`,
-            images: [{ url: post.thumbnailUrl }],
+            modifiedTime: post.updatedAt.toISOString(),
+            authors: ['Rifki Setiawan'],
+            tags: [post.category.replace('_', ' ')],
         },
+
+        // Metadata Twitter Card yang lebih kaya
         twitter: {
             card: 'summary_large_image',
             title: post.title,
-            description: `A devlog post by Rifki Setiawan.`,
-            images: [post.thumbnailUrl],
+            description: post.excerpt,
+            creator: '@rstiawann_',
+            images: {
+                url: post.thumbnailUrl,
+                alt: `Thumbnail for ${post.title}`,
+            },
         },
     };
 }
