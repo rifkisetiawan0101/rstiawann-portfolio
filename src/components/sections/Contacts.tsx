@@ -45,9 +45,7 @@ const Contacts = () => {
                 title="Contact Me" 
                 subtitle={
                     <>
-                        I am currently looking for internship opportunities and am open to new challenges.
-                        <br />
-                        If you have any questions or just want to say hello, my inbox is always open.
+                        I am currently looking for internship opportunities and am open to new challenges. If you have any questions or just want to say hello, my inbox is always open.
                     </>
                 } 
             />

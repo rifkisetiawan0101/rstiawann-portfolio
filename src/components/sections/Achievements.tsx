@@ -4,37 +4,10 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Achievement } from '@prisma/client'; // Impor tipe dari Prisma
+import { Achievement } from '@prisma/client';
 import SectionTitle from '@/components/ui/SectionTitle';
+import PdfPreviewModal from '@/components/ui/PdfPreviewModal';
 
-// Komponen Modal untuk menampilkan PDF
-const CertificateModal = ({ pdfUrl, onClose }: { pdfUrl: string | null; onClose: () => void; }) => {
-    if (!pdfUrl) return null;
-    const embedUrl = `${pdfUrl}#toolbar=0&navpanes=0`;
-    return (
-        <motion.div 
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
-            exit={{ opacity: 0 }} 
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" 
-            onClick={onClose}
-        >
-            <motion.div 
-                initial={{ scale: 0.9, opacity: 0, y: 20 }}
-                animate={{ scale: 1, opacity: 1, y: 20 }}
-                exit={{ scale: 0.9, opacity: 0, y: 20 }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                className="bg-slate-800 rounded-lg shadow-xl w-full max-w-4xl h-[80vh] flex flex-col p-4 relative" 
-                onClick={(e) => e.stopPropagation()}
-            >
-                <button onClick={onClose} className="absolute -top-4 -right-4 bg-slate-700 p-2 rounded-full text-white hover:bg-slate-600 z-10"><X size={24} /></button>
-                <iframe src={embedUrl} className="w-full h-full border-0 rounded-md" title="Certificate Preview"></iframe>
-            </motion.div>
-        </motion.div>
-    );
-};
-
-// Komponen Utama Section
 const AchievementsSection = ({ achievements }: { achievements: Achievement[] }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [activePdfUrl, setActivePdfUrl] = useState<string | null>(null);
@@ -157,7 +130,12 @@ const AchievementsSection = ({ achievements }: { achievements: Achievement[] }) 
             </div>
 
             <AnimatePresence>
-                {activePdfUrl && <CertificateModal pdfUrl={activePdfUrl} onClose={() => setActivePdfUrl(null)} />}
+                {activePdfUrl && (
+                    <PdfPreviewModal 
+                        pdfUrl={activePdfUrl} 
+                        onClose={() => setActivePdfUrl(null)} 
+                    />
+                )}
             </AnimatePresence>
         </section>
     );

@@ -23,10 +23,10 @@ const PdfPreviewModal = ({ pdfUrl, onClose }: PdfPreviewModalProps) => {
             onClick={onClose}
         >
             <motion.div 
-                initial={{ scale: 0.9, opacity: 0, y: 20 }}
-                animate={{ scale: 1, opacity: 1, y: 30 }}
-                exit={{ scale: 0.9, opacity: 0, y: 20 }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                initial={{ opacity: 0, y: 600 }}
+                animate={{ opacity: 1, y: 30 }}
+                exit={{ opacity: 0, y: 600 }}
+                transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
                 className="bg-slate-800 rounded-lg shadow-xl w-full max-w-4xl h-[80vh] flex flex-col p-4 relative" 
                 onClick={(e) => e.stopPropagation()}
             >

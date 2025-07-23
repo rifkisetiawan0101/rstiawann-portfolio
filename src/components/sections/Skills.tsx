@@ -16,7 +16,7 @@ const SkillsSection = ({ skills }: { skills: Skill[] }) => {
         { name: 'Other Tools', key: 'tools' },
     ];
 
-    // Memorize hasil filter agar tidak dihitung ulang setiap render
+    // Memoize hasil filter agar tidak dihitung ulang setiap render
     const filteredSkills = useMemo(() => {
         if (activeFilter === 'All') {
             return skills;
@@ -53,13 +53,12 @@ const SkillsSection = ({ skills }: { skills: Skill[] }) => {
                 <AnimatePresence>
                     {filteredSkills.map((skill) => (
                         <motion.div
-                            key={skill.id.toString()} // Menggunakan ID unik dari database
+                            key={skill.id.toString()}
                             layout
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.8 }}
-                            transition={{ type: 'spring', stiffness: 200, damping: 25 }}
-                            // Kartu skill, sama seperti versi lama
+                            transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
                             className="group relative flex flex-col items-center justify-center bg-slate-800/70 p-4 rounded-xl overflow-hidden"
                         >
                             <Image 
@@ -67,7 +66,6 @@ const SkillsSection = ({ skills }: { skills: Skill[] }) => {
                                 alt={skill.name} 
                                 width={64}
                                 height={64}
-                                // Ukuran logo dan efek hover, sama seperti versi lama
                                 className="h-1/2 w-1/2 max-h-16 max-w-16 object-contain transition-all duration-300 group-hover:opacity-20 group-hover:scale-75" 
                             />
                             
@@ -75,7 +73,6 @@ const SkillsSection = ({ skills }: { skills: Skill[] }) => {
                                 {skill.name}
                             </p>
 
-                            {/* Efek hover untuk menampilkan detail, sama seperti versi lama */}
                             <div className="absolute inset-0 flex flex-col items-center justify-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-slate-800/80">
                                 <h3 className="text-lg font-bold text-white mb-4 text-center">{skill.name}</h3>
                                 <div className="text-left w-full">

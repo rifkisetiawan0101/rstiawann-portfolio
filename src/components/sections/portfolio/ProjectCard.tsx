@@ -20,7 +20,7 @@ const ProjectCard = ({ project, onOpenModal }: { project: Project; onOpenModal: 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ type: 'spring', stiffness: 200, damping: 25 }}
+            transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
         >
             <div 
                 className="bg-slate-800/70 rounded-lg overflow-hidden flex flex-col h-full transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-indigo-500/20"
