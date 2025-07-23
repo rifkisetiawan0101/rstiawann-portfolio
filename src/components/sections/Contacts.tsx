@@ -93,7 +93,7 @@ const Contacts = () => {
                         <button
                             type="submit"
                             disabled={status.loading}
-                            className="w-full md:w-auto bg-indigo-600 text-white font-semibold px-8 py-3 rounded-md hover:bg-indigo-700 transition-all transform hover:scale-105 inline-flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="w-full md:w-auto bg-indigo-600 hover:bg-indigo-500  text-white font-semibold px-8 py-3 rounded-md transition-all transform hover:scale-105 inline-flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             {status.loading ? 'Sending...' : 'Send Message'}
                         </button>

@@ -7,7 +7,7 @@ import ProjectCard from './ProjectCard';
 import ContributionModal from './ContributionModal';
 
 const ProjectList = ({ projects }: { projects: Project[] }) => {
-    const [activeFilter, setActiveFilter] = useState('All');
+    const [activeFilter, setActiveFilter] = useState('FULLSTACK');
     const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
 
     const filterGroups = [

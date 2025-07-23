@@ -94,11 +94,13 @@ export default function RootLayout({
             </head>
             <body className={`${inter.className} bg-slate-900 text-white`}>
                 <EffectsWrapper />
-                <Header />
-                <div className="relative z-10">
-                    {children}
+                <div className="relative z-10 flex flex-col min-h-screen">
+                    <Header />
+                    <main className="flex-grow">
+                        {children}
+                    </main>
+                    <Footer />
                 </div>
-                <Footer />
             </body>
         </html>
     );

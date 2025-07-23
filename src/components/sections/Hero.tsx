@@ -59,20 +59,24 @@ const HeroSection = () => {
                         </div>
                         <p className="mt-6 text-sm lg:text-base text-slate-300">{personalInfo.bio}</p>
                         <div className="mt-8 flex justify-center md:justify-start items-center gap-4">
-                            <span className="text-sm lg:text-base text-slate-200">{personalInfo.email}</span>
-                            <button onClick={copyEmail} className="relative text-slate-300 hover:text-white transition-colors">
+                            <span className="text-slate-200">{personalInfo.email}</span>
+                            <button 
+                                onClick={copyEmail} 
+                                className="relative text-slate-300 hover:text-white transition-colors"
+                                aria-label="Copy email to clipboard"
+                            >
                                 <Copy size={18} />
                                 {isCopied && (<span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-700 text-white text-xs px-2 py-1 rounded">Copied!</span>)}
                             </button>
                         </div>
                         <div className="mt-4 flex justify-center md:justify-start items-center gap-6">
-                            <a href={personalInfo.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-indigo-400 transition-colors"><Linkedin size={24} /></a>
-                            <a href={personalInfo.socials.github} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-indigo-400 transition-colors"><Github size={24} /></a>
-                            <a href={personalInfo.socials.itch} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-indigo-400 transition-colors"><Gamepad2 size={24} /></a>
-                            <a href={personalInfo.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-indigo-400 transition-colors"><Instagram size={24} /></a>
+                            <a href={personalInfo.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-indigo-400 transition-colors" aria-label="Visit my LinkedIn profile"><Linkedin size={24} /></a>
+                            <a href={personalInfo.socials.github} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-indigo-400 transition-colors" aria-label="Visit my GitHub profile"><Github size={24} /></a>
+                            <a href={personalInfo.socials.itch} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-indigo-400 transition-colors" aria-label="Visit my Itch.io profile"><Gamepad2 size={24} /></a>
+                            <a href={personalInfo.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-indigo-400 transition-colors" aria-label="Visit my Instagram profile"><Instagram size={24} /></a>
                         </div>
                         <div className="mt-10 flex text-xs lg:text-base justify-center md:justify-start gap-4">
-                            <Link href="/portfolio" className="group bg-indigo-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-indigo-500 transition-all transform hover:scale-105 inline-flex items-center gap-2">
+                            <Link href="/portfolio" className="group bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-md transition-all transform hover:scale-105 inline-flex items-center gap-2">
                                 View My Works 
                                 <ArrowDownCircle size={18} className="transition-transform group-hover:animate-[shake-vertical_1s_ease-in-out_infinite]" />
                             </Link>
