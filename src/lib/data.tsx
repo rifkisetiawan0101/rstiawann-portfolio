@@ -10,5 +10,5 @@ export const personalInfo = {
         itch: "https://itch.io/profile/rstiawann",
         instagram: "https://instagram.com/rstiawann_",
     },
-    profilePicture: "/assets/profile/rstiawann-black.png"
+    profilePicture: "/assets/profile/rstiawann-black.webp"
 };
