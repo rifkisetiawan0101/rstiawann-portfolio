@@ -25,7 +25,7 @@
     }
 
     /* Animasi untuk mouse trail */
-@keyframes fade-out-trail {
+    @keyframes fade-out-trail {
         from {
             opacity: 1;
             transform: translate(-50%, -50%) scale(1);
