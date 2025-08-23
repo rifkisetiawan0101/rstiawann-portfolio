@@ -1,3 +1,4 @@
+// import { personalInfo } from '@/lib/data';
 export const personalInfo = {
     name: "Rifki Setiawan",
     roles: ["Fullstack", 1500, "Game", 1500],

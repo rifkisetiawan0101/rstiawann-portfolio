@@ -12,7 +12,7 @@ const ProjectCard = ({ project, onOpenModal }: { project: Project; onOpenModal: 
     const shortOverview = overviewText.substring(0, 100) + (overviewText.length > 100 ? '...' : '');
     
     // Konversi tipe JsonValue dari Prisma ke objek yang bisa kita gunakan
-    const links = project.links as { trailer?: string; github?: string; live?: string; itch?: string; };
+    const links = project.links as { trailer?: string; itch?: string; live?: string; github?: string;  };
 
     return (
         <motion.div
@@ -63,7 +63,7 @@ const ProjectCard = ({ project, onOpenModal }: { project: Project; onOpenModal: 
                         )}
                         <div className="grid grid-cols-3 gap-2 text-sm">
                             {links?.trailer && <a href={links.trailer} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-indigo-400 bg-slate-700/50 hover:bg-slate-700 p-2 rounded-md flex items-center justify-center gap-1.5 transition-colors"><Youtube size={16}/> Trailer</a>}
-                            {links?.itch && <a href={links.live} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-indigo-400 bg-slate-700/50 hover:bg-slate-700 p-2 rounded-md flex items-center justify-center gap-1.5 transition-colors"><ExternalLink size={16}/> Itch.io</a>}
+                            {links?.itch && <a href={links.itch} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-indigo-400 bg-slate-700/50 hover:bg-slate-700 p-2 rounded-md flex items-center justify-center gap-1.5 transition-colors"><ExternalLink size={16}/> Itch.io</a>}
                             {links?.live && <a href={links.live} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-indigo-400 bg-slate-700/50 hover:bg-slate-700 p-2 rounded-md flex items-center justify-center gap-1.5 transition-colors"><ExternalLink size={16}/> Live</a>}
                             {links?.github && <a href={links.github} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-indigo-400 bg-slate-700/50 hover:bg-slate-700 p-2 rounded-md flex items-center justify-center gap-1.5 transition-colors"><Github size={16}/> Docs</a>}
                         </div>
