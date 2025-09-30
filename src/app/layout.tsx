@@ -18,6 +18,11 @@ export const metadata: Metadata = {
     keywords: ["Rifki Setiawan", "Rifki Setiawan PNJ", "rstiawann_", "Portfolio Rifki", "Portfolio Rifki Setiawan", "Game Developer", "Full-Stack Developer", "React Portfolio", "Unity Developer"],
     authors: [{ name: "Rifki Setiawan", url: siteUrl }],
     creator: "Rifki Setiawan",
+
+    // Google Search Console Verification
+    verification: {
+        google: "CsrHDukjucmeQI29gUYwKl0JI3bzz9NUqOn1Fc8GElM",
+    },
     
     // Metadata Open Graph (untuk Facebook, LinkedIn, dll.)
     openGraph: {
