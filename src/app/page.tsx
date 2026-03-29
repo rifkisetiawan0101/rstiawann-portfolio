@@ -18,7 +18,7 @@ export default async function HomePage() {
             orderBy: { id: 'asc' },
         }),
         prisma.achievement.findMany({
-            orderBy: { id: 'desc' }, // Tampilkan pencapaian terbaru lebih dulu
+            orderBy: { id: 'asc' }, // Tampilkan pencapaian terbaru lebih dulu
         }),
     ]);
 
